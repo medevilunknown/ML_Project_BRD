@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+# Report/presentation are submitted separately, not published here
+report/
+*.pdf
+*.pptx
+*.docx
+/Cantor_machineclean-opendepository.xlsx

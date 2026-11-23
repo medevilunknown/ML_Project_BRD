@@ -1,0 +1,11 @@
+# Tested with Python 3.12 (macOS arm64). Versions pinned so the saved model loads without warnings.
+pandas==3.1.1
+numpy==2.5.5
+openpyxl==3.1.5
+scikit-learn==1.9.1
+matplotlib==3.11.2
+seaborn==0.13.2
+joblib==1.6.0
+torch==2.15.0
+streamlit==1.67.0
+jupyter==1.1.1

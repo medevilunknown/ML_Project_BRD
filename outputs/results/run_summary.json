@@ -1,0 +1,411 @@
+{
+  "detected": {
+    "id_candidates": [
+      "IdSeq",
+      "SENDER"
+    ],
+    "diagnosis_candidates": [
+      "Pneuday"
+    ],
+    "calf_id": "SENDER",
+    "pneuday": "Pneuday"
+  },
+  "dataset": {
+    "rows": 8706,
+    "columns": 36,
+    "unique_calves": 107
+  },
+  "target": {
+    "positive_rows": 316,
+    "negative_rows": 4298,
+    "positive_calves": 54,
+    "healthy_calves_used": 57
+  },
+  "features": {
+    "used": [
+      "Data_Points",
+      "Total_Steps",
+      "Total_MI",
+      "Lying_time",
+      "Lying_bouts",
+      "lying_daily",
+      "Gender",
+      "Season",
+      "Feederage",
+      "Feederday",
+      "Milk_Intake",
+      "Milk_percent",
+      "Speed",
+      "Speed_percent",
+      "Starter_Intake",
+      "Rewarded",
+      "Unrewarded",
+      "BRIX",
+      "DPARITY",
+      "Pen",
+      "PERSON_SCORING",
+      "Fecal",
+      "Temp_score",
+      "Temp",
+      "Weight",
+      "Breath"
+    ],
+    "excluded": [
+      "IdSeq",
+      "SENDER",
+      "Pneuday",
+      "_row",
+      "target",
+      "Count",
+      "Observation",
+      "Date",
+      "Enrolldate",
+      "Herd",
+      "BIRTHDATE",
+      "agefeeder"
+    ]
+  },
+  "split": {
+    "train_calves": 85,
+    "test_calves": 22,
+    "train_rows": 3733,
+    "test_rows": 881,
+    "test_positive_rows": 66
+  },
+  "best_model": "Random Forest",
+  "best_threshold": 0.4484339255410465,
+  "tuning": [
+    {
+      "Model": "Random Forest",
+      "CV average precision": 0.2724999233172699,
+      "Best params": "{\"max_depth\": 4, \"min_samples_leaf\": 20}",
+      "Tuned threshold": 0.4484339255410465,
+      "OOF precision": 0.1383989145183175,
+      "OOF recall": 0.816,
+      "OOF f2": 0.4122877930476961
+    },
+    {
+      "Model": "Gradient Boosting",
+      "CV average precision": 0.1860702740575753,
+      "Best params": "{\"learning_rate\": 0.05, \"max_depth\": 2, \"n_estimators\": 100}",
+      "Tuned threshold": 0.07847045653851295,
+      "OOF precision": 0.12150747238466536,
+      "OOF recall": 0.748,
+      "OOF f2": 0.3682552185899961
+    },
+    {
+      "Model": "1D-CNN",
+      "CV average precision": 0.14428255726297312,
+      "Best params": "{\"window_days\": 7, \"epochs\": 3, \"conv_channels\": 32}",
+      "Tuned threshold": 0.4067109227180481,
+      "OOF precision": NaN,
+      "OOF recall": NaN,
+      "OOF f2": NaN
+    },
+    {
+      "Model": "Logistic Regression",
+      "CV average precision": 0.141706201759448,
+      "Best params": "{\"C\": 0.01, \"penalty\": \"l2\"}",
+      "Tuned threshold": 0.26601021802848507,
+      "OOF precision": 0.09368797141722907,
+      "OOF recall": 0.944,
+      "OOF f2": 0.33532253481102586
+    },
+    {
+      "Model": "MLP",
+      "CV average precision": 0.14124361950903436,
+      "Best params": "{\"alpha\": 0.001, \"hidden_layer_sizes\": [64, 32], \"learning_rate_init\": 0.001}",
+      "Tuned threshold": 0.016994043837537436,
+      "OOF precision": 0.10072314049586777,
+      "OOF recall": 0.78,
+      "OOF f2": 0.33208446866485014
+    },
+    {
+      "Model": "KNN",
+      "CV average precision": 0.12737428069020026,
+      "Best params": "{\"n_neighbors\": 51, \"weights\": \"distance\"}",
+      "Tuned threshold": 0.0595349652750613,
+      "OOF precision": 0.10928319623971798,
+      "OOF recall": 0.744,
+      "OOF f2": 0.34418948926720944
+    }
+  ],
+  "results": [
+    {
+      "Model": "Random Forest",
+      "Threshold": 0.4484339255410465,
+      "Accuracy": 0.6526674233825198,
+      "Precision": 0.15517241379310345,
+      "Recall": 0.8181818181818182,
+      "F1": 0.2608695652173913,
+      "ROC-AUC": 0.7806097787692879,
+      "Recall@0.5": 0.696969696969697,
+      "F1@0.5": 0.26744186046511625
+    },
+    {
+      "Model": "Gradient Boosting",
+      "Threshold": 0.07847045653851295,
+      "Accuracy": 0.6674233825198638,
+      "Precision": 0.13738019169329074,
+      "Recall": 0.6515151515151515,
+      "F1": 0.22691292875989447,
+      "ROC-AUC": 0.7021379438557352,
+      "Recall@0.5": 0.0,
+      "F1@0.5": 0.0
+    },
+    {
+      "Model": "MLP",
+      "Threshold": 0.016994043837537436,
+      "Accuracy": 0.656072644721907,
+      "Precision": 0.12618296529968454,
+      "Recall": 0.6060606060606061,
+      "F1": 0.20887728459530025,
+      "ROC-AUC": 0.6981966908347277,
+      "Recall@0.5": 0.045454545454545456,
+      "F1@0.5": 0.07317073170731707
+    },
+    {
+      "Model": "KNN",
+      "Threshold": 0.0595349652750613,
+      "Accuracy": 0.5720771850170261,
+      "Precision": 0.1141439205955335,
+      "Recall": 0.696969696969697,
+      "F1": 0.19616204690831557,
+      "ROC-AUC": 0.6357687302472579,
+      "Recall@0.5": 0.0,
+      "F1@0.5": 0.0
+    },
+    {
+      "Model": "Logistic Regression",
+      "Threshold": 0.26601021802848507,
+      "Accuracy": 0.37911464245175935,
+      "Precision": 0.10509031198686371,
+      "Recall": 0.9696969696969697,
+      "F1": 0.18962962962962962,
+      "ROC-AUC": 0.6846439858709797,
+      "Recall@0.5": 0.5909090909090909,
+      "F1@0.5": 0.18055555555555555
+    },
+    {
+      "Model": "1D-CNN",
+      "Threshold": 0.4067109227180481,
+      "Accuracy": 0.6072644721906924,
+      "Precision": 0.1111111111111111,
+      "Recall": 0.6060606060606061,
+      "F1": 0.18779342723004694,
+      "ROC-AUC": 0.6937534857780256,
+      "Recall@0.5": 0.5757575757575758,
+      "F1@0.5": 0.20821917808219179
+    }
+  ],
+  "learning_curve": {
+    "train_auc_final": 0.9454615421869839,
+    "valid_auc_final": 0.8059397373567414
+  },
+  "boosting_loss": {
+    "best_iteration": 100,
+    "final_train_loss": 0.15135481485332786,
+    "final_valid_loss": 0.18188155604609968,
+    "min_valid_loss": 0.18188155604609968
+  },
+  "error_analysis": {
+    "recall_by_pneuday": {
+      "-6.0": 0.818,
+      "-5.0": 0.818,
+      "-4.0": 0.727,
+      "-3.0": 0.909,
+      "-2.0": 0.818,
+      "-1.0": 0.818
+    },
+    "records_by_pneuday": {
+      "-6.0": 11,
+      "-5.0": 11,
+      "-4.0": 11,
+      "-3.0": 11,
+      "-2.0": 11,
+      "-1.0": 11
+    },
+    "sick_test_calves": 11,
+    "sick_calves_flagged_at_least_once": 11,
+    "healthy_test_calves": 11,
+    "mean_false_alarm_rate_per_healthy_calf": 0.3883295525710259,
+    "healthy_calves_with_any_false_alarm": 11
+  },
+  "failure_analysis": {
+    "model": "Random Forest",
+    "threshold": 0.4484339255410465,
+    "confusion": {
+      "TP": 54,
+      "FN": 12,
+      "FP": 294,
+      "TN": 521
+    },
+    "mean_prob": {
+      "pre_brd": 0.5447725859720525,
+      "healthy": 0.31950314110573474
+    },
+    "fn_high_confidence_healthy": 0,
+    "fp_high_confidence": 5,
+    "sick_calves": 11,
+    "sick_calves_never_flagged": 0,
+    "sick_calves_flagged_3plus_days": 9,
+    "never_flagged_calves": [],
+    "healthy_calves": 11,
+    "healthy_calves_with_false_alarm": 11,
+    "worst_healthy_calf_flag_rate": 0.9166666666666666,
+    "by_age": {
+      "1-14": {
+        "healthy_records": 147.0,
+        "false_alarm_rate": 0.646,
+        "pre_brd_records": 12.0,
+        "recall": 0.667
+      },
+      "15-28": {
+        "healthy_records": 145.0,
+        "false_alarm_rate": 0.834,
+        "pre_brd_records": 20.0,
+        "recall": 1.0
+      },
+      "29-42": {
+        "healthy_records": 140.0,
+        "false_alarm_rate": 0.557,
+        "pre_brd_records": 34.0,
+        "recall": 0.765
+      },
+      "43-56": {
+        "healthy_records": 140.0,
+        "false_alarm_rate": 0.0,
+        "pre_brd_records": 0.0,
+        "recall": NaN
+      },
+      "57+": {
+        "healthy_records": 243.0,
+        "false_alarm_rate": 0.0,
+        "pre_brd_records": 0.0,
+        "recall": NaN
+      }
+    },
+    "pre_brd_records_missed_by_all_models": 1,
+    "pre_brd_records_caught_by_all_models": 21,
+    "pre_brd_records": 66,
+    "error_rate_by_missing": {
+      "False": 0.34959349593495936,
+      "True": 0.3464566929133858
+    },
+    "z_profiles": {
+      "TP": {
+        "Milk_Intake": 0.56,
+        "Milk_percent": -0.26,
+        "Speed": 0.43,
+        "Starter_Intake": -0.35,
+        "Total_Steps": -0.38,
+        "Lying_time": 0.51,
+        "Lying_bouts": 0.02,
+        "Temp": 0.44,
+        "Temp_score": 0.51,
+        "Breath": 0.24,
+        "Fecal": 0.31,
+        "Weight": -0.58,
+        "Feederday": -0.64,
+        "Rewarded": 0.46,
+        "Unrewarded": -0.19
+      },
+      "FN": {
+        "Milk_Intake": 0.62,
+        "Milk_percent": -0.2,
+        "Speed": 0.43,
+        "Starter_Intake": -0.33,
+        "Total_Steps": 0.07,
+        "Lying_time": 0.2,
+        "Lying_bouts": -0.07,
+        "Temp": -1.06,
+        "Temp_score": -1.03,
+        "Breath": -0.43,
+        "Fecal": -0.23,
+        "Weight": -0.7,
+        "Feederday": -0.75,
+        "Rewarded": -0.41,
+        "Unrewarded": -0.33
+      },
+      "FP": {
+        "Milk_Intake": 0.74,
+        "Milk_percent": 0.01,
+        "Speed": 0.19,
+        "Starter_Intake": -0.48,
+        "Total_Steps": 0.28,
+        "Lying_time": 0.3,
+        "Lying_bouts": 0.06,
+        "Temp": 0.3,
+        "Temp_score": 0.27,
+        "Breath": -0.14,
+        "Fecal": 0.44,
+        "Weight": -0.57,
+        "Feederday": -0.86,
+        "Rewarded": -0.09,
+        "Unrewarded": -0.31
+      },
+      "TN": {
+        "Milk_Intake": -0.29,
+        "Milk_percent": 0.3,
+        "Speed": -0.14,
+        "Starter_Intake": 0.23,
+        "Total_Steps": 0.2,
+        "Lying_time": -0.18,
+        "Lying_bouts": -0.05,
+        "Temp": -0.44,
+        "Temp_score": -0.43,
+        "Breath": -0.07,
+        "Fecal": -0.4,
+        "Weight": 0.71,
+        "Feederday": 0.48,
+        "Rewarded": -0.28,
+        "Unrewarded": -0.06
+      }
+    },
+    "age_matched_auc": {
+      "Logistic Regression": 0.48148148148148145,
+      "KNN": 0.5217452300785634,
+      "Random Forest": 0.5868757014590348,
+      "Gradient Boosting": 0.4445145903479237,
+      "MLP": 0.4960718294051627,
+      "1D-CNN": 0.49470398428731766
+    }
+  },
+  "clustering": {
+    "pca_components": 16,
+    "pca_variance_kept": 0.9177453157242624,
+    "best_k": 2,
+    "best_silhouette": 0.16187118658762256,
+    "cluster_pre_brd_rate": {
+      "0": 0.0954,
+      "1": 0.0
+    },
+    "cluster_sizes": {
+      "0": 3314,
+      "1": 1300
+    }
+  },
+  "cnn": {
+    "window_days": 7,
+    "input_shape": [
+      26,
+      7
+    ],
+    "cv_average_precision": 0.14428255726297312,
+    "threshold": 0.4067109227180481,
+    "fold_best_epochs": [
+      4,
+      4,
+      3,
+      3,
+      1
+    ],
+    "final_epochs": 3,
+    "n_parameters": 6177
+  },
+  "mlp_curve": {
+    "epochs": 51,
+    "final_loss": 0.04689244446857725,
+    "best_validation_accuracy": 0.9545454545454546
+  }
+}
